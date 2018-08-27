@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>exercicio</title>
+</head>
+<body>
+    <h1>Exercicio</h1>
+    <div class="tudo">
+        <label>Primeiro Numero: </label>
+            <input type="number" id="n1">
+            <br><br>
+        <label>Segundo Numero: </label>
+            <input type="number" id="n2">
+            <br><br>
+        <label>Terceiro Numero: </label>
+            <input type="number" id="n3">
+            <br><br>
+        <input type="submit" onclick="somar()" value="Somar">
+    </div>
+<p id="numero1"></p>
+<p id="numero2"></p>
+<p id="numero3"></p>
+<p id="soma_todos"></p>
+<script>
+    function somar() { 
+
+        var n1 = parseInt(document.getElementById('n1').value);
+        var n2 = parseInt(document.getElementById('n2').value);
+        var n3 = parseInt(document.getElementById('n3').value);
+        
+        document.getElementById('numero1').innerHTML = "O Primeiro Numero : "+n1;
+        document.getElementById('numero2').innerHTML = "O Segundo Numero: "+n2;
+        document.getElementById('numero3').innerHTML = "O Terceiro Numero: "+n3;
+
+        var soma = n1+n2+n3;
+        document.getElementById('soma_todos').innerHTML = "A Soma dos Numeros: "+soma;
+     }
+</script>
+
+</body>
+</html>
