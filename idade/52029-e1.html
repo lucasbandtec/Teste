@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Algoritmo</title>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <br><br>
+    <h2 class="titulo">Exercicio</h2>
+    <hr>
+        
+    <label>Nome:</label>
+        <input type="text" id="nome">
+    <br><br>
+    <label>Nascimento: </label>
+        <input type="number" id="ano" min="1900" max="2018">
+    <br>
+    <input type="submit" onclick="converter()">
+    <p id="nome2"></p>
+    <p id="idade"></p>
+        
+<script>
+     function converter (){
+
+        var ano = document.getElementById('ano').value;
+        var idade = 2018-ano;
+        document.getElementById('idade').innerHTML = "Voce tem "+idade+" Anos";
+
+
+        var nome= document.getElementById('nome').value;
+        document.getElementById('nome2').innerHTML = "Oi "+nome;
+}
+</script>
+
+</body>
+
+</html>
