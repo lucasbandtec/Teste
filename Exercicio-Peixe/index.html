@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button{
+            color: black;
+            background: rgb(251, 255, 0);
+            border-radius: 10px;
+    }
+    </style>
+</head>
+<body>
+    <label>Digite o peso do peixe: </label>
+        <input type="number" id="peso_peixe"><br>
+    <p>PesoRef: 50 Kg</p>
+    <p>MultaRef: 4,00 P/Kg</p>
+    <label>Estado: </label>
+    <select>
+        <option value="SP">SP</option>
+    </select><br><br>
+    <button onclick="multa()">Multa</button>
+
+    <p id="resultado"></p>
+
+
+
+
+<script>
+    function multa(){
+        var peso = document.getElementById('peso_peixe').value;
+        var multa_sp = 4;
+        var peso_maximo_sp = 50;
+        var excendente;
+        var valor_multa;
+
+        if (peso > 100 && peso <=0){
+            alert('Erro,Valor maximo é 100.');
+
+            
+        }
+        if (peso <51 && peso >0.1){
+            document.getElementById('resultado').innerHTML = "Sem Multa";
+            
+        }
+
+        if(peso >50 && peso <101){
+
+            excendente = peso - peso_maximo_sp;
+            valor_multa = excendente * multa_sp;
+
+            document.getElementById('resultado').innerHTML = "O valor da multa é: "+valor_multa;
+            
+        }
+        
+    }
+
+
+</script>
+</body>
+</html>
