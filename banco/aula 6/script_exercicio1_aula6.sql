@@ -21,3 +21,7 @@ create table instituicao(
     nome varchar(30),
     bairro varchar(30)
 );
+select * from aluno,empresa,instituicao
+	where codemp = empresa.codigo and 
+		  codinst = instituicao.codigo and 
+          ra = 1;
