@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tente Sua Sorte</title>
+</head>
+<body>
+    Tente sua Sorte!!!
+    <input  type="submit" onclick="minhafunction()" value="Vai">
+
+    <p id="resultado"></p>
+<script>
+    function minhafunction() { 
+        var text = "Erro!!!"
+        var numero = parseInt(Math.random() * 100 +1);
+
+        switch(numero){
+            case 7:
+                text = "Boa Vida!";
+                break;
+            case 33:
+                text = "Você está amando";
+                break;
+            case 9:
+                text = "Você não sabe fazer arroz";
+                break;
+            case 51:
+                text = "Você foi traido!!";
+                break;e
+            case 42:
+                text = "Não estou na fossa.";
+                break;
+            default: 
+                text = "Ninguem gosta de você!!!";
+}
+        document.getElementById('resultado').innerHTML = text;
+}
+    
+</script>
+</body>
+</html>

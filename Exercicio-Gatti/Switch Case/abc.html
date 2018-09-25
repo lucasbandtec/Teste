@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ABC</title>
+</head>
+<body>
+    <label>Digite(a ou b ou c): </label>
+        <input type="text" id="letra">
+    <button onclick="minhafunction()" >OK</button>
+
+    <p id="resultado"></p>
+    <p id="resultado2"></p>
+    <p id="resultado3"></p>
+<script>
+        var contador_a = 0;
+        var contador_b = 0;
+        var contador_c = 0;
+
+    function minhafunction(){
+        var text = "Erro!!";
+        var letra = document.getElementById('letra').value;
+     
+
+
+        switch(letra){
+            case 'a':
+                contador_a++;
+                break;
+            case 'b':
+                contador_b++;
+                break;
+            case 'c':
+                contador_c++;
+                break;
+            default:
+                text = "Erro";
+    }
+
+    document.getElementById('resultado').innerHTML = "A: " + contador_a + " vezes";
+    document.getElementById('resultado2').innerHTML = "B: " + contador_b + " vezes";
+    document.getElementById('resultado3').innerHTML = "C: " + contador_c + " vezes";
+    }
+</script>
+</body>
+</html>
