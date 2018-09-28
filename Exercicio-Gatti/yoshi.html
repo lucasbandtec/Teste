@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <span style="color: red" id ="erro"></span> </br>
+   
+
+    <div>
+
+
+        <label>Qual seu nível de conversa? (0-10): </label>
+        <input type="number" id="conversa"><br><br>
+
+    <label>Quantos livros já leu? (mínimo de 0): </label>
+        <input type="number" id="livros"><br><br>
+
+    <label>Quantos jogos de celular, playstation ou xbox já jogou? (mínimo de 0): </label>
+        <input type="number" id="jogos"><br><br>
+
+    <label>Quantos namorados(as) ou ficantes já teve? (mínimo de 0): </label>
+        <input type="number" id="namorados"><br><br>
+
+    <button onclick="perfil()">Analisar Perfil</button>
+    </div>
+    
+
+
+    <p id="resultado1"></p>
+    <p id="resultado2"></p>
+    <p id="resultado3"></p>
+    <p id="resultado4"></p>
+<script>
+
+        
+        
+
+
+
+    function perfil(){
+       
+
+var msg = 'Erro!!';
+        var conversa = parseInt(document.getElementById('conversa').value);
+        var livros = parseInt(document.getElementById('livros').value);
+        var jogos = parseInt(document.getElementById('jogos').value);
+        var namorados = parseInt(document.getElementById('namorados').value);
+        
+
+        
+
+
+    if(validacao(conversa, livros, jogos, namorados)){
+
+
+        var conversaRes;
+        var livrosRes;
+        var jogosRes;
+        var namoradosRes;
+
+
+         if (conversa >=6){
+            conversaRes = 'Sim'
+        }
+        else if (conversa <6){
+
+            conversaRes = 'Não'
+        }
+        
+    
+              
+
+
+   
+
+        if (livros>=10){
+            livrosRes = 'Sim'
+       }
+        else if (livros<10){
+            livrosRes = 'Não'
+        }
+   
+
+
+
+   
+
+        if (jogos>=10){
+            jogosRes = 'Sim'
+        }
+        else if (jogos<10){
+            jogosRes = 'Não'
+        }
+    
+
+
+
+
+    
+
+        if (namorados<=3){
+            namoradosRes = 'Sim'
+        }
+        else if(namorados>3){
+            namoradosRes = 'Não'
+        }
+    
+
+
+
+
+        document.getElementById('resultado1').innerHTML =  "Boa de Conversa? "+ conversaRes;
+        document.getElementById('resultado2').innerHTML = "Culta? "+ livrosRes;
+        document.getElementById('resultado3').innerHTML = "Curte um Videogame? "+ jogosRes;
+        document.getElementById('resultado4').innerHTML = "Difícil de Conquistar? "+ namoradosRes;
+
+
+    }
+
+
+
+    
+}
+
+function validacao(conversa, livros, jogos, namorados) {
+
+    
+
+
+    if(conversa < 0 || conversa > 10 ){
+
+        document.getElementById('erro').innerHTML = "";
+        document.getElementById('erro').innerHTML = "Nível de conversa inválido";
+        return false;
+    }
+    else if(livros <0){
+
+        document.getElementById('erro').innerHTML = "";
+        document.getElementById('erro').innerHTML = "Quantidade de livros inválidos";
+
+        return false;
+    }
+    else if(jogos <0){
+
+        document.getElementById('erro').innerHTML = "";
+        document.getElementById('erro').innerHTML = "Quantidade de jogos inválidos";
+
+        return false;
+    }
+
+   else if(namorados <0){
+
+        document.getElementById('erro').innerHTML = "";
+        document.getElementById('erro').innerHTML = "Quantidade de namorados inválidos";
+
+        return false;
+    }
+
+    else{
+        
+            return true;
+
+    };
+
+
+}
+    
+
+
+</script>
+</body>
+</html>
