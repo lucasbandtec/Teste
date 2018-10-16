@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label>Digite um Numero: </label>
+        <input id="valor" type="number">
+    <br><br>
+    <button onclick="minhafunction_d()">Dobro</button>
+    <button onclick="minhafunction_m()">Metade</button>
+    <button onclick="minhafunction_t()">Triplo</button>
+
+    <p id="mostrar"></p>
+    
+<script>
+    var resultado;
+
+    function definirValor() {
+
+        var valor = parseInt(document.getElementById('valor').value);
+        return valor;
+    }
+
+     
+
+    function minhafunction_d(){
+
+        let numero = definirValor();
+
+        //var valor = parseInt(document.getElementById('valor').value);
+        
+        resultado = dobro(numero);
+        
+        document.getElementById('mostrar').innerHTML = "O Dobro é: " + resultado;
+
+    }
+
+    function minhafunction_m(){
+        let numero = definirValor();
+
+        resultado = metade(numero);
+
+        document.getElementById('mostrar').innerHTML = "A Metade é: " + resultado;
+    }
+   
+    function minhafunction_t(){
+        let numero = definirValor();
+        resultado = triplo(numero);
+
+        document.getElementById('mostrar').innerHTML = "O Triplo é: " + resultado; 
+    }
+
+    function dobro(a){
+        return a * 2;
+
+    }
+    function metade(b){
+        return b / 2;
+    }
+    function triplo(c){
+        return c * 3;
+    }
+</script>
+</body>
+</html>

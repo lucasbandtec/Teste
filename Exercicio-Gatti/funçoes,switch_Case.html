@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label>Digite o Numero: </label>
+        <input id="numero" type="number">
+    <br><br>
+    <button onclick="calcular(1)">Dobro</button>
+    <button onclick="calcular(2)">Metade</button>
+    <button onclick="calcular(3)">Triplo</button>
+
+    <p id="resultado"></p>
+<script>
+    function calcular(op) { 
+        switch (op){
+            case 1: exibeResultado(getNumero()*2);
+                break;
+            case 2: exibeResultado(getNumero()/2);
+                break;
+            case 3: exibeResultado(getNumero()*3);
+                break;
+        }
+     }
+
+    function exibeResultado(msg) {
+        document.getElementById('resultado').innerHTML = msg;
+     }
+    function getNumero() {
+        return parseInt(document.getElementById('numero').value);
+    }
+</script>
+</body>
+</html>
