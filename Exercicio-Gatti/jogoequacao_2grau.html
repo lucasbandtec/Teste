@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Jogo das Equações</title>
+</head>
+
+<body>
+
+    <label>Valor de A: </label>
+        <input type="text" id="valor_A"> 
+        <br><br>
+    <label>Valor de B: </label>
+        <input type="text" id="valor_B"> <br>
+    <br><br>    
+
+    <button onclick="minhaFuncao()"> Jogar</button>
+
+<p id="resultado"></p>
+
+<script>
+    function exibeResultado(msg) {
+        document.getElementById("resultado").innerHTML = msg;
+    }
+    function getNumeroFloat(id) {
+        return parseFloat(
+        document.getElementById(id).value
+    );
+    }
+
+    function defineC(){
+        return Math.random() * 1000.1;
+    }
+
+    function defineDelta(a, b, c){
+        return (b * b) - 4 * a * c;
+    }
+
+    function minhaFuncao() {
+
+        var a = getNumeroFloat("valor_A");
+        var b = getNumeroFloat("valor_B");
+        var c = defineC();
+        var delta = defineDelta(a, b, c);
+        
+        var valid = validacao(delta);
+
+        if (valid){
+            var raiz1 = raizpositiva(a,b,delta);
+            var raiz2 = raiznegativa(a,b,delta);
+            
+            if(raiz1 > 0 && raiz2 > 0 && raiz2 > raiz1){
+
+                exibeResultado(" :-( ");
+            }
+            if(raiz1 > 0 && raiz2 > 0 && raiz1 > raiz2){
+                exibeResultado(" :-) ")
+            }
+            if(raiz1 < 0 || raiz2 < 0){
+                exibeResultado(" :-( ")
+            }
+
+        }
+    }
+
+
+
+
+function raizpositiva(a,b,delta){
+    return (- b + Math.sqrt(delta)) / (2*a);
+}
+function raiznegativa(a,b,delta){
+    return (- b - Math.sqrt(delta)) / (2*a);
+}
+
+function validacao(delta){
+    if (delta > 0){
+        return true;
+    }
+    if (delta<=0){
+        return false;
+    }
+}
+</script>
+
+
+</body>
+
+</html>
