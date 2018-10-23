@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Flocsberg</title>
+</head>
+<body>
+    
+    <label>Primeiro Valor: </label>
+        <input id="valor1" type="number"><br><br>
+    <label>Segundo Valor: </label>
+        <input id="valor2" type="number"><br><br>
+    <label>Terceiro Valor: </label>
+        <input id="valor3" type="number"><br><br>
+    <label>Quarto Valor: </label>
+        <input id="valor4" type="number"><br><br>
+    <label>Quinto Valor: </label>
+        <input id="valor5" type="number"><br><br>
+    <label>Sexto Valor: </label>
+        <input id="valor6" type="number"><br><br>
+    <button type="button" onclick="main()" class="btn btn-primary" >Medir</button>
+
+<p id="resultado1"></p>
+<p id="resultado2"></p>
+<p id="resultado3"></p>
+  
+<script>
+    
+
+    function main(){
+        var valor1 = parseInt(document.getElementById('valor1').value);
+        var valor2 = parseInt(document.getElementById('valor2').value);
+        var valor3 = parseInt(document.getElementById('valor3').value);
+        var valor4 = parseInt(document.getElementById('valor4').value);
+        var valor5 = parseInt(document.getElementById('valor5').value);
+        var valor6 = parseInt(document.getElementById('valor6').value);
+
+        var medicao = [valor1,valor2,valor3,valor4,valor5,valor6];
+
+        let mediaResult = media(medicao);
+        let minResult = minimo(medicao);
+        let maxResult = maximo(medicao);
+
+
+        document.getElementById('resultado1').innerHTML = "Media: " + mediaResult;
+        document.getElementById('resultado2').innerHTML = "Minimo: " + minResult;
+        document.getElementById('resultado3').innerHTML = "Maximo: " + maxResult;
+    }
+
+    function media(medicao){
+        let sum = 0;
+        let media;
+
+        for (let index = 0; index < medicao.length; index++) {
+            sum += medicao[index];
+            
+        }
+        media = parseInt(sum / medicao.length);
+
+        return media;
+    }
+
+    function minimo(medicao){
+        minimo = Math.min(...medicao);
+
+        return minimo;
+    }
+
+    function maximo(medicao){
+        maximo = Math.max(...medicao);
+
+        return maximo;
+    }
+    
+
+</script>
+</body>
+</html>
