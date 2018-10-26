@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="main.js"></script>
+</head>
+<div style=" text-align: center">
+
+
+    <h2>JOGO DO IMPAR OU PAR</h2>
+    <label for="numero"> Insira um número de 0 a 5:</label>
+    <br>
+    <input type="number" id="numero">
+    <br>
+    <label> Escolha uma paridade:</label>
+    <br>
+    <input type="radio" name="jogada"  id="par" checked> Par
+    <input type="radio" name="jogada"  id="impar"> Impar
+    <br>
+
+    <button onclick="game()" class="btn btn-success"> Jogar </button>
+
+    <p id="maquina"></p>
+    <p id="resultado"></p>
+    <p id="erro" style="color: red"></p>
+
+    <br>
+    <br>
+    <img src="par-ou-impar-badwolf13.png" alt="">
+</div>
+
+
+<script>
+
+    function game() {
+
+        var par = document.getElementById('par').checked;
+        var impar = document.getElementById('impar').checked;
+
+
+        let playerNumber = parseInt(document.getElementById('numero').value);
+        let machineNumber = parseInt(Math.random() * 5);
+        let sumNumber = parseInt(playerNumber + machineNumber);
+
+        var validado = validacao(playerNumber);
+
+        if (validado) {
+
+            if (sumNumber % 2 == 0 && par) {
+
+                document.getElementById('erro').innerHTML = "";
+                document.getElementById('resultado').innerHTML = "Você ganhou!";
+                document.getElementById('maquina').innerHTML = "A máquina jogou: " + machineNumber;
+
+            }
+            if (sumNumber % 2 != 0 && impar) {
+
+                document.getElementById('erro').innerHTML = "";
+                document.getElementById('resultado').innerHTML = "Você ganhou!";
+                document.getElementById('maquina').innerHTML = "A máquina jogou: " + machineNumber;
+            }
+            if (sumNumber % 2 == 0 && impar) {
+                
+                document.getElementById('erro').innerHTML = "";
+                document.getElementById('resultado').innerHTML = "Você perdeu!";
+                document.getElementById('maquina').innerHTML = "A máquina jogou: " + machineNumber;
+            }
+
+
+            if (sumNumber % 2 != 0 && par) {
+
+                document.getElementById('erro').innerHTML = "";
+                document.getElementById('resultado').innerHTML = "Você perdeu!";
+                document.getElementById('maquina').innerHTML = "A máquina jogou: " + machineNumber;
+
+            }
+        }
+
+    }
+
+    function validacao(params) {
+
+        if (params < 0 || params > 5 || isNaN(params)) {
+
+             document.getElementById('maquina').innerHTML = "";
+            document.getElementById('resultado').innerHTML = "";
+            
+            document.getElementById('erro').innerHTML = "Insira um número válido!";
+
+            return false
+        }
+        return true;
+    }
+
+
+
+
+
+
+
+</script>
+
+</body>
+
+</html>
