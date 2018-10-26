@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Flocsberg</title>
 </head>
 <body>
@@ -23,10 +24,17 @@
         <input id="valor6" type="number"><br><br>
     <button type="button" onclick="main()" class="btn btn-primary" >Medir</button>
 
+
 <p id="resultado1"></p>
 <p id="resultado2"></p>
 <p id="resultado3"></p>
+<div>
+<canvas id="bar-chart" width="100" height="40"></canvas>
   
+
+</div>
+
+
 <script>
     
 
@@ -48,9 +56,49 @@
         document.getElementById('resultado1').innerHTML = "Media: " + mediaResult;
         document.getElementById('resultado2').innerHTML = "Minimo: " + minResult;
         document.getElementById('resultado3').innerHTML = "Maximo: " + maxResult;
+
+
+        
+
+new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: ["Regiao 1", "Regiao 2", "Regiao 3", "Região 4", "Regiao 5", "Regiao 6"],
+      datasets: [
+        {
+          label: "Temperaturas",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [valor1,valor2,valor3,valor4,valor5, valor6]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Temperatura'
+      }
+    }
+});
     }
 
     function media(medicao){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         let sum = 0;
         let media;
 
