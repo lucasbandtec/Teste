@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Analytics</title>
+</head>
+<body>
+    <button onclick="max()">Max</button>
+    <br>
+    <button onclick="min()">Min</button>
+    <br>
+    <button onclick="media()">Média</button>
+
+    <p id="mostrar_max"></p>
+    <p id="mostrar_min"></p>
+    <script>
+
+    var temperaturas = [23,22,17,35,45,12,9];
+    var ordenar = temperaturas.sort(function(a, b){return a-b});
+    var msg = 'Erro!!';
+    function max(){
+
+    
+        document.getElementById('mostrar_max').innerHTML = temperaturas[6];
+    }
+    
+    function min(){
+        document.getElementById('mostrar_min').innerHTML = temperaturas[0];
+    }
+
+    function media(){
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Analytics</title>
+</head>
+<body>
+    <button onclick="max()">Max</button>
+    <br>
+    <button onclick="min()">Min</button>
+    <br>
+    <button onclick="media()">Média</button>
+
+    <p id="mostrar"></p>
+    <script>
+
+    var temperaturas = [23,22,17,35,45,12,9];
+    
+
+    
+    function max(){
+        var msg = 'Erro!!';
+        var max = temperaturas[0];
+        
+        for(var i=1 ; i <= temperaturas.length; i++) {
+            if(temperaturas[i] > max){
+                max = temperaturas[i];
+            
+            }
+        }
+        document.getElementById('mostrar').innerHTML = max;
+    }
+    
+    function min(){
+        var msg = 'Erro!!';
+        var min = temperaturas[0];
+        
+        for(var i=1 ; i <= temperaturas.length; i++) {
+            if(temperaturas[i] < min){
+                min = temperaturas[i];
+            
+            }
+        }
+        document.getElementById('mostrar').innerHTML = min;
+    }
+
+    function media(){
+        var msg = 'Erro!!';
+        var soma = 0;
+        for (var i = 0; i < temperaturas.length; i++) {
+            soma = soma + temperaturas[i];
+            
+        }
+        var media = soma/ temperaturas.length;
+        document.getElementById('mostrar').innerHTML = media
+
+    }
+
+    </script>
+</body>
+</html>
