@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="main()">Onde Está?</button>
+
+    <p id="mostrar"></p>
+<script>
+    var temperaturas = [20,20,21,21,19,19,18,17,15,12,18];
+    var temperaturasUnicas = [20];
+
+    function exibeResultado(msg){
+        document.getElementById('mostrar').innerHTML = msg;
+    }
+    
+    function mostrarLista(){
+        var msg = "";
+        for (let i = 0; i < temperaturas.length; i++) {
+            msg = msg + "["+ i + "]: " +temperaturas [i] + "<br>" ;
+            
+        }
+
+        return msg;
+
+    }
+    function existe(valor){
+        var retorno = false;
+        for (let i = 0; i < temperaturasUnicas.length; i++) {
+            if(temperaturasUnicas[i] == valor){
+                retorno = true;
+            }
+        }
+        
+        return retorno;
+
+
+    }
+
+    function criaTemperaturasUnicas(){
+        for (let i = 0; i < temperaturas.length; i++) {
+            if (existe(temperaturas[i]) == false){
+                temperaturasUnicas.push(temperaturas[i]);
+            }
+            
+        }
+    }
+
+    function main(){
+        
+        criaTemperaturasUnicas();
+        exibeResultado( temperaturasUnicas );    
+        
+
+    }
+
+</script>
+</body>
+</html>
