@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="main()">posição</button>
+
+
+    <script> 
+    
+     
+
+        function main2(temps) {
+        
+          
+
+            for (let i = 0; i < temps.length; i++) {
+
+                if (temps[i] == 19) {
+                    return i;
+                }
+
+            }
+        }
+
+        function main() {
+
+            var temps = [20, 20, 21, 21,19,  18, 17, 15, 12, 18];
+
+            // var posicao = main2(temps);
+           
+            // 
+             let valor = 0;
+            let posicao = 0;
+            let cont = 0;
+            let caminho = false;
+            
+            while (valor != 19 &&  cont < temps.length ) {
+
+                if (temps[cont] == 19) {
+                    valor = 19;
+                    posicao = cont;
+                    caminho = true;
+                }
+                cont++;
+                
+
+            }
+            if(caminho){
+                posicao++
+                console.log(posicao);
+            }
+            else{
+                console.log("Nenhum valor encontrado");
+            }
+
+            
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Programa das Temperaturas</title>
+</head>
+
+<body>
+
+<h1> Programa das Temperatura Pang</h1>
+Temperatura: <input type="text" id="campoTemp"> <br> <br>
+<button onclick="main()"> Onde está?</button>
+<br>
+
+<p id="resultado"></p>
+
+<script>
+//inicialização das temperatura
+var temperaturas = [20,20,21,21,19,19,18,17,15,12,18];
+
+function getValorInt(id){
+let valor=  parseInt(document.getElementById(id).value);
+
+
+return valor;
+}
+
+function exibeResultado(msg) {
+document.getElementById("resultado").innerHTML = msg;
+}
+function temperaturaPosicao(foco){
+    
+var posicao = 0;
+
+while(temperaturas[posicao] != foco &&
+posicao < temperaturas.length){
+
+posicao++;
+}
+
+
+if (temperaturas[posicao] == foco){
+return posicao+1;
+}
+else{
+return 0;
+}
+}
+
+function main(){
+var msg = "ERRO!!";
+let foco = getValorInt("campoTemp");
+var posicaoTemp = temperaturaPosicao(foco);
+
+console.log(posicaoTemp)
+
+if (posicaoTemp != 0){
+msg = "A posicao da Temperatura "
++ foco
++ " é : "
++ posicaoTemp;
+}
+else {
+msg = "O valor não existe na lista de temperaturas";
+}
+exibeResultado(msg);
+}
+
+
+
+</script>
+</body>
+
+</html>
