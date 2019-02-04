@@ -54,6 +54,18 @@ public class PrimeiroPrograma {
         System.out.println("b= " + b + "\ta= " + a);
         b = ++a;
         System.out.println("b= " + b + "\ta= " + a);
+        
+        //Declaração de variável real (com casas decimais)
+        float nota;
+        
+        //Pede para o usuário digitar a nota
+        System.out.println("Digite a sua nota");
+        //Leitura da nota digitada
+        nota = leitor.nextFloat();
+        //Exibição da nota lida
+        System.out.println("A nota lida é " + nota);
+        
+        
     }
     
 }
