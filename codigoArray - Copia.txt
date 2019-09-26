@@ -1,0 +1,35 @@
+    Dim txb_Pergunta(1 To 8) As Control
+    Set txb_Pergunta(1) = txt_pergunta_1
+    Set txb_Pergunta(2) = txt_pergunta_2
+    Set txb_Pergunta(3) = txt_pergunta_3
+    Set txb_Pergunta(4) = txt_pergunta_4
+    Set txb_Pergunta(5) = txt_pergunta_5
+    Set txb_Pergunta(6) = txt_pergunta_6
+    Set txb_Pergunta(7) = txt_pergunta_7
+    Set txb_Pergunta(8) = txt_pergunta_8
+    
+    Dim txb_Variavel(1 To 8) As Control
+    Set txb_Variavel(1) = txt_variavel_1
+    Set txb_Variavel(2) = txt_variavel_2
+    Set txb_Variavel(3) = txt_variavel_3
+    Set txb_Variavel(4) = txt_variavel_4
+    Set txb_Variavel(5) = txt_variavel_5
+    Set txb_Variavel(6) = txt_variavel_6
+    Set txb_Variavel(7) = txt_variavel_7
+    Set txb_Variavel(8) = txt_variavel_8
+    
+    Dim i As Integer
+    For i = 1 To 10
+        If txb_Pergunta(i) <> "" Then
+            If txb_Variavel(i).Text = "" Then
+                'Se tiver texto na pergunta e não tiver na variavel, aparece um aviso sobre preenchimento obrigatorio para variavel
+                MsgBox "CAMPO ""VARIAVEL 1"" DEVE SER PREENCHIDA DE ACORDO COM A PERGUNTA 1", vbExclamation, "AVISO"
+                txb_Variavel(i).SetFocus
+                Exit Sub
+                Else
+                'Se tiver texto nos dois campos, insere o texto que será digitado no arquivo txt
+                    strPergunta1 = "##" + txb_Pergunta(i) + "[s:getvar name=" + txb_Variavel(i) + "]"
+            End If
+        End If
+    Next i
+   
